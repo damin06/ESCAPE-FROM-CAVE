@@ -51,7 +51,9 @@
      <Compile Include="Assets\01_scriptes\c.cs" />
      <Compile Include="Assets\01_scriptes\PlayerMove.cs" />
      <Compile Include="Assets\01_scriptes\playerhit.cs" />
+     <Compile Include="Assets\01_scriptes\movingplatform.cs" />
      <None Include="Assets\Gothicvania Cemetery Artwork\about.txt" />
+     <None Include="Assets\Asset FTTGR\Shader\Wind.shader" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -273,6 +275,9 @@
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+        <HintPath>C:\Users\user\Documents\platfomer_prototype2\sever_04_28\Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -717,6 +722,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{b48e7061-ed17-ae69-c891-0ba05a12f4fa}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
