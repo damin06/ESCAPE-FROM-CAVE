@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class PlayerMove : chrachtermove
 {
+     SpriteRenderer spriteRenderer;
+    PlayerHP playerHP;
  Playershot playershot;
     Animator animator;
     [SerializeField]
@@ -25,6 +27,8 @@ public class PlayerMove : chrachtermove
 
     protected override void Start()
     {
+         spriteRenderer = GetComponent<SpriteRenderer>();
+        playerHP = GetComponent<PlayerHP>();
         playershot =GetComponent<Playershot>();
         base.Start();
         _col = GetComponent<Collider2D>();
@@ -87,6 +91,17 @@ private void Update()
     {
         return Physics2D.OverlapBox(transform.position, _col.bounds.size, 0f , _groundLayer);
     }
-   
+private void OnTriggerEnter2D(Collider2D collision)
+{
+   StopCoroutine("HitColorAnimation");
+        StartCoroutine("HitColorAnimation");
+}
+IEnumerator HitColorAnimation()
+    {
+        spriteRenderer.color = Color.red;
 
+        yield return new WaitForSeconds(0.5f);
+
+        spriteRenderer.color = Color.white;
+    }
 }

@@ -49,11 +49,14 @@
      <Compile Include="Assets\01_scriptes\enemyAI.cs" />
      <Compile Include="Assets\01_scriptes\playerBullet.cs" />
      <Compile Include="Assets\01_scriptes\c.cs" />
+     <Compile Include="Assets\01_scriptes\movingplatform.cs" />
      <Compile Include="Assets\01_scriptes\PlayerMove.cs" />
      <Compile Include="Assets\01_scriptes\playerhit.cs" />
-     <Compile Include="Assets\01_scriptes\movingplatform.cs" />
+     <Compile Include="Assets\UI pack\Scripts\FillValueNumber.cs" />
+     <Compile Include="Assets\01_scriptes\PlayerHP.cs" />
      <None Include="Assets\Gothicvania Cemetery Artwork\about.txt" />
      <None Include="Assets\Asset FTTGR\Shader\Wind.shader" />
+     <None Include="Assets\UI pack\Documentation.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
