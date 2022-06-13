@@ -36,6 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\01_scriptes\PlayerHP.cs" />
      <Compile Include="Assets\01_scriptes\bullet.cs" />
      <Compile Include="Assets\01_scriptes\shotenemyspawn.cs" />
      <Compile Include="Assets\01_scriptes\Destroyzone.cs" />
@@ -44,6 +45,7 @@
      <Compile Include="Assets\01_scriptes\Spawn.cs" />
      <Compile Include="Assets\01_scriptes\character\characterMove.cs" />
      <Compile Include="Assets\01_scriptes\enemy.cs" />
+     <Compile Include="Assets\UI pack\Scripts\FillValueNumber.cs" />
      <Compile Include="Assets\01_scriptes\shotenemy.cs" />
      <Compile Include="Assets\01_scriptes\leftenemy.cs" />
      <Compile Include="Assets\01_scriptes\enemyAI.cs" />
@@ -52,8 +54,7 @@
      <Compile Include="Assets\01_scriptes\movingplatform.cs" />
      <Compile Include="Assets\01_scriptes\PlayerMove.cs" />
      <Compile Include="Assets\01_scriptes\playerhit.cs" />
-     <Compile Include="Assets\UI pack\Scripts\FillValueNumber.cs" />
-     <Compile Include="Assets\01_scriptes\PlayerHP.cs" />
+     <Compile Include="Assets\01_scriptes\right_enemy.cs" />
      <None Include="Assets\Gothicvania Cemetery Artwork\about.txt" />
      <None Include="Assets\Asset FTTGR\Shader\Wind.shader" />
      <None Include="Assets\UI pack\Documentation.txt" />

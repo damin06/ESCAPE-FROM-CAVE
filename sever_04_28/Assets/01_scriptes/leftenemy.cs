@@ -7,7 +7,10 @@ public class leftenemy : playerhit
   
     public float speed = 3;
       Vector3 dir=Vector3.left;
-   
+   [SerializeField]
+    private float gatoHP=10;
+    [SerializeField]
+      public float gatodamager=30;
 protected override void Dead()
     {
         Debug.Log("사망");
@@ -18,16 +21,22 @@ protected override void Dead()
   
  public void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player")){
-        base.Dead();
-        Dead();
-        }
+       if(other.CompareTag("bullet"))
+       {
+         gatoHP-=playerBullet.bulletdamage;
+       }
+       if(other.CompareTag("Player"))
+       {
+        PlayerHP.currentHP-=gatodamager;
+       }
     } 
  
 void Update()
     {
       transform.position += dir*speed*Time.deltaTime;
-        
+          if(gatoHP<=0){
+            Destroy(gameObject);
+        }
     }
     
 }

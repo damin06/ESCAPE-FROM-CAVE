@@ -93,8 +93,12 @@ private void Update()
     }
 private void OnTriggerEnter2D(Collider2D collision)
 {
-   StopCoroutine("HitColorAnimation");
-        StartCoroutine("HitColorAnimation");
+    if(collision.CompareTag("enemy"))
+    {
+        StopCoroutine("HitColorAnimation");
+        StartCoroutine("HitColorAnimation");  
+    }
+
 }
 IEnumerator HitColorAnimation()
     {

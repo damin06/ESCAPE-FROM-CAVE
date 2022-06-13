@@ -7,6 +7,7 @@ public class playerBullet : MonoBehaviour
   public static float bulletdamage=10;
     Vector3 vec = Vector3.right;
       public int speed=20;
+
     // Start is called before the first frame update
     void Start()
     {

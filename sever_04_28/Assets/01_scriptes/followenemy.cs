@@ -92,7 +92,7 @@ public class followenemy : MonoBehaviour
         }
       if(collision.CompareTag("Player"))
       {
-        PlayerHP.currentHP-=damage;
+        //PlayerHP.currentHP-=damage;
         //collision.GetComponent<PlayerHP>().HPdamager(damage);
       
       }
