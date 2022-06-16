@@ -47,6 +47,7 @@
      <Compile Include="Assets\01_scriptes\enemy.cs" />
      <Compile Include="Assets\UI pack\Scripts\FillValueNumber.cs" />
      <Compile Include="Assets\01_scriptes\shotenemy.cs" />
+     <Compile Include="Assets\01_scriptes\right_enemy.cs" />
      <Compile Include="Assets\01_scriptes\leftenemy.cs" />
      <Compile Include="Assets\01_scriptes\enemyAI.cs" />
      <Compile Include="Assets\01_scriptes\playerBullet.cs" />
@@ -54,7 +55,7 @@
      <Compile Include="Assets\01_scriptes\movingplatform.cs" />
      <Compile Include="Assets\01_scriptes\PlayerMove.cs" />
      <Compile Include="Assets\01_scriptes\playerhit.cs" />
-     <Compile Include="Assets\01_scriptes\right_enemy.cs" />
+     <Compile Include="Assets\01_scriptes\score.cs" />
      <None Include="Assets\Gothicvania Cemetery Artwork\about.txt" />
      <None Include="Assets\Asset FTTGR\Shader\Wind.shader" />
      <None Include="Assets\UI pack\Documentation.txt" />

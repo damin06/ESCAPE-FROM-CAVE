@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class leftenemy : playerhit
 {
-  
     public float speed = 3;
       Vector3 dir=Vector3.left;
    [SerializeField]
@@ -24,6 +23,8 @@ protected override void Dead()
        if(other.CompareTag("bullet"))
        {
          gatoHP-=playerBullet.bulletdamage;
+         score sc = GameObject.Find("score").GetComponent<score>();
+         sc.SetScore(sc.GetScore()+10);
        }
        if(other.CompareTag("Player"))
        {

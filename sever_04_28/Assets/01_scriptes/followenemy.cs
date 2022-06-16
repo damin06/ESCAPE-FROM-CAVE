@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class followenemy : MonoBehaviour
 {
+  
     PlayerHP playerHP;
     Animator animator;
 
@@ -36,6 +38,9 @@ public class followenemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      if(PlayerHP.currentHP<0){
+        Destroy(gameObject);
+      }
         if(enemyHP<=0)
         {
             Destroy(gameObject);
@@ -89,12 +94,18 @@ public class followenemy : MonoBehaviour
     {
         if(collision.CompareTag("bullet")){
            enemyHP-=playerBullet.bulletdamage;
+           score sc = GameObject.Find("score").GetComponent<score>();
+           sc.SetScore(sc.GetScore()+10);
         }
       if(collision.CompareTag("Player"))
       {
-        //PlayerHP.currentHP-=damage;
+        PlayerHP.currentHP-=damage;
         //collision.GetComponent<PlayerHP>().HPdamager(damage);
       
       }
+    }
+   public void enemydestroy()
+    {
+     Destroy(gameObject);
     }
 }

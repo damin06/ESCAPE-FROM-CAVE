@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Collider2D))]
 public class PlayerMove : chrachtermove
 {
+  [SerializeField]private Transform diepos;
+   [SerializeField]private GameObject diepbject;
+    public bool Die=false;
      SpriteRenderer spriteRenderer;
     PlayerHP playerHP;
  Playershot playershot;
@@ -23,10 +27,12 @@ public class PlayerMove : chrachtermove
 
 
     private Collider2D _col = null;
+    followenemy enemyfollow;
   
 
     protected override void Start()
     {
+        enemyfollow = GetComponent<followenemy>();
          spriteRenderer = GetComponent<SpriteRenderer>();
         playerHP = GetComponent<PlayerHP>();
         playershot =GetComponent<Playershot>();
@@ -37,6 +43,12 @@ public class PlayerMove : chrachtermove
 
 private void Update()
 {
+    if(PlayerHP.currentHP<0)
+    {
+        StartCoroutine("playerdie");
+      
+
+    }
     if(playershot.reroled==true || playershot.shot==true){
       Debug.Log("재장전");
         StopCoroutine(Move());
@@ -107,5 +119,22 @@ IEnumerator HitColorAnimation()
         yield return new WaitForSeconds(0.5f);
 
         spriteRenderer.color = Color.white;
+    }
+    public void Diev()
+    {
+        
+      animator.SetBool("death",true);
+    }
+     IEnumerator playerdie()
+     {  _jumpSpeed=0;
+         _speed=0;
+         StopCoroutine(Move());
+        StopCoroutine(Jump());
+     animator.SetBool("death",true);
+     yield return new WaitForSeconds(2.5f);
+     SceneManager.LoadScene("die");
+      Instantiate(diepbject);
+      diepbject.transform.position = diepos.transform.position;
+      Destroy(gameObject);
     }
 }

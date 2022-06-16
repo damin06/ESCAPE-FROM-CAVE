@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agroRange: 10
   movespeed: 4
-  damage: 5
+  damage: 15
   enemyHP: 10
 --- !u!61 &5231994953563532989
 BoxCollider2D:

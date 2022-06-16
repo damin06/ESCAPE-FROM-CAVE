@@ -12,9 +12,11 @@ public float speed = 3;
       [SerializeField]
       private float gatodamager=30;
    
+   
 void Start()
 {
 transform.eulerAngles= new Vector3(0,180,0);
+
 }
   
  public void OnTriggerEnter2D(Collider2D other)
@@ -22,6 +24,8 @@ transform.eulerAngles= new Vector3(0,180,0);
        if(other.CompareTag("bullet"))
        {
          gatoHP-=playerBullet.bulletdamage;
+         score sc = GameObject.Find("score").GetComponent<score>();
+         sc.SetScore(sc.GetScore()+10);
        }
        if(other.CompareTag("Player"))
        {
