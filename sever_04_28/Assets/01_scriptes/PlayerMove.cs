@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Collider2D))]
 public class PlayerMove : chrachtermove
 {
+    
+    public float hori;
   [SerializeField]private Transform diepos;
    [SerializeField]private GameObject diepbject;
     public bool Die=false;
@@ -64,7 +66,7 @@ private void Update()
 
      public IEnumerator Move()
     {
-        float hori = Input.GetAxis("Horizontal");
+         hori = Input.GetAxis("Horizontal");
 
         _rb.velocity = new Vector2(Mathf.Lerp(_rb.velocity.x , hori * _speed, _moveSmooth * Time.deltaTime), _rb.velocity.y);
         if(hori>0){
@@ -132,9 +134,10 @@ IEnumerator HitColorAnimation()
         StopCoroutine(Jump());
      animator.SetBool("death",true);
      yield return new WaitForSeconds(2.5f);
-     SceneManager.LoadScene("die");
       Instantiate(diepbject);
       diepbject.transform.position = diepos.transform.position;
       Destroy(gameObject);
+      
+        
     }
 }

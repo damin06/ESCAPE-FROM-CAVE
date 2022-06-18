@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2304615490898722628}
   m_Layer: 0
   m_Name: gato
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 170196277515744131}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 20.315, y: -6.3536, z: 0}
-  m_LocalScale: {x: 6.925526, y: 6.925526, z: 6.925526}
+  m_LocalScale: {x: 5.6138315, y: 5.6138315, z: 5.6138315}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: c5650e72c34344f699287f969a247dee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1d5c2b524d7734240a82bc6b06f841c8, type: 3}
   m_Color: {r: 1, g: 0.5523194, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -114,18 +114,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.010053217, y: -0.07707751}
+  m_Offset: {x: -0.013273269, y: -0.03199418}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96, y: 0.53}
+    oldSize: {x: 0.37, y: 0.65}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4437018, y: 0.28284603}
+  m_Size: {x: 0.14099956, y: 0.3730127}
   m_EdgeRadius: 0
 --- !u!50 &-696815651192170005
 Rigidbody2D:

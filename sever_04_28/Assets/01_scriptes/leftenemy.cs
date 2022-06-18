@@ -10,6 +10,10 @@ public class leftenemy : playerhit
     private float gatoHP=10;
     [SerializeField]
       public float gatodamager=30;
+      private void Start()
+      {
+        transform.eulerAngles= new Vector3(0,180,0);
+      }
 protected override void Dead()
     {
         Debug.Log("사망");

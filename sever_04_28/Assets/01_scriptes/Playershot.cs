@@ -17,7 +17,9 @@ public class Playershot : MonoBehaviour
   public Text bullettxt;
   public bool shot=false;
   
+  
     void Start(){
+    
         animator=GetComponent<Animator>();
         playerMove=GetComponent<PlayerMove>();
       
@@ -25,6 +27,8 @@ public class Playershot : MonoBehaviour
     }
       void Update()
     {
+        gamepause pu = GameObject.Find("gamepause").GetComponent<gamepause>();
+      if(gamepause.ispause==false){
       bullettxt.text=bulletmin + "/8";
      if(Input.GetKeyDown(KeyCode.R))
      {
@@ -47,7 +51,9 @@ StartCoroutine(rebullet());
                   
         }
     }
+    
      currentime -=Time.deltaTime;   
+      }
     }
   IEnumerator bulletfire()
   {

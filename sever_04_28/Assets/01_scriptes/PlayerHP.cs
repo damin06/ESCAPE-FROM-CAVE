@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHP : MonoBehaviour
 {
@@ -11,8 +12,10 @@ public class PlayerHP : MonoBehaviour
    public Image HPbar;
     private float maxHP=100f;
     public static float currentHP;
+    
     void Start()
     {
+      
       playerMove = GetComponent<PlayerMove>();
       ani = GetComponent<Animator>();
         HPbar = GetComponent<Image>();
@@ -28,7 +31,8 @@ public class PlayerHP : MonoBehaviour
       }
         HPbar.fillAmount = currentHP / maxHP ;
         if(currentHP <=0)
-        {
+        {   
+          
           //playerMove.Diev();
          // Destroy(gameObject);
         //ani.SetBool("death",true);
@@ -41,4 +45,5 @@ public class PlayerHP : MonoBehaviour
       currentHP-=damage;
       }
     }
+ 
 }

@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawn : MonoBehaviour
-{    public Transform maxPos = null;
-    public Transform minPos = null;
-    public  GameObject enemy;
-        public  GameObject enemy2;
-    public float currentime;
-    public float rand;
-    public float spawntime;
-
+{     [SerializeField]private  Transform maxPos;
+     [SerializeField]private  Transform minPos;
+    [SerializeField]private  GameObject enemy;
+        //public  GameObject enemy2;
+    private float currentime;
+    private float rand;
+    private float spawntime;
+    [SerializeField]private float Spawnmintime;
+    [SerializeField]private float spawnmaxtime;
     void Start()
     {
         StartCoroutine(SpawnEnemy());
@@ -26,13 +27,13 @@ public class Spawn : MonoBehaviour
     // }
     private IEnumerator SpawnEnemy()
     {
-       rand =UnityEngine.Random.Range(9,18);
+       rand =UnityEngine.Random.Range(Spawnmintime,spawnmaxtime);
         
         while(true){
             yield return new WaitForSeconds(rand);
           Instantiate(enemy, new Vector2(Random.Range(minPos.position.x, maxPos.position.x), maxPos.position.y), enemy.transform.rotation);
             yield return null;
-          rand =UnityEngine.Random.Range(9,18);
+          rand =UnityEngine.Random.Range(Spawnmintime,spawnmaxtime);
          
   
         }

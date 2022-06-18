@@ -15,7 +15,7 @@ public float speed = 3;
    
 void Start()
 {
-transform.eulerAngles= new Vector3(0,180,0);
+
 
 }
   

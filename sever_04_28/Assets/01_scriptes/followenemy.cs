@@ -32,9 +32,11 @@ public class followenemy : MonoBehaviour
         animator = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
        rnadomwait= Random.Range(1,3);
-       animator.SetTrigger("spawn");
+       spawnenemy();
     }
-
+private void spawnenemy(){
+   animator.SetTrigger("spawn");
+}
     // Update is called once per frame
     void Update()
     {

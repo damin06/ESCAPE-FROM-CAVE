@@ -15,10 +15,10 @@ public class Destroyzone : MonoBehaviour
     {
         
     }
-    public void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
       
-Destroy(other.gameObject);
+Destroy(collision.gameObject);
         
                
     }
