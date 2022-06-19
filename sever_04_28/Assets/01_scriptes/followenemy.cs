@@ -23,7 +23,10 @@ public class followenemy : MonoBehaviour
     private float damage=5;
     [SerializeField]
     private float enemyHP=10;
-    
+       [SerializeField]private AudioSource mysfx;
+     [SerializeField]private AudioClip deathsound;
+  [SerializeField]private AudioClip attack;
+   [SerializeField]private AudioClip walksound;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +43,7 @@ private void spawnenemy(){
     // Update is called once per frame
     void Update()
     {
+      //mysfx.PlayOneShot(walksound);
       if(PlayerHP.currentHP<0){
         Destroy(gameObject);
       }
@@ -92,15 +96,24 @@ private void spawnenemy(){
      yield return new WaitForSeconds(1);
       transform.eulerAngles= new Vector3(0,180,0);
     }
-   private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(collision.CompareTag("bullet")){
-           enemyHP-=playerBullet.bulletdamage;
+      if(other.CompareTag("bullet"))
+      {
+         enemyHP-=playerBullet.bulletdamage;
            score sc = GameObject.Find("score").GetComponent<score>();
            sc.SetScore(sc.GetScore()+10);
+      
+      }
+    }
+   private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("bullet")){
+          mysfx.PlayOneShot(deathsound);
         }
-      if(collision.CompareTag("Player"))
+      if(collision.gameObject.CompareTag("Player"))
       {
+        mysfx.PlayOneShot(attack);
         PlayerHP.currentHP-=damage;
         //collision.GetComponent<PlayerHP>().HPdamager(damage);
       

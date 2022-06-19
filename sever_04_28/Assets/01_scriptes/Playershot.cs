@@ -16,7 +16,13 @@ public class Playershot : MonoBehaviour
    int bulletmax=8;
   public Text bullettxt;
   public bool shot=false;
-  
+  [SerializeField]private AudioSource mysfx;
+  [SerializeField]private AudioClip shotfx;
+  [SerializeField]private AudioClip a;
+  [SerializeField]private AudioClip b;
+  [SerializeField]private AudioClip c;
+  [SerializeField]private AudioClip d;
+  [SerializeField]private AudioClip re;
   
     void Start(){
     
@@ -43,6 +49,8 @@ StartCoroutine(rebullet());
            {
               bulletmin--;
             StartCoroutine(bulletfire());
+           
+            bulletsounds();
            }
            else
            {
@@ -66,11 +74,28 @@ StartCoroutine(rebullet());
   }
   IEnumerator rebullet()
   {
+    mysfx.PlayOneShot(re);
  reroled=true;
  animator.SetTrigger("rero");
  animator.SetBool("run",false);
     yield return new WaitForSeconds(0.9f);
     bulletmin=8;
     reroled=false;
+  }
+  private void bulletsounds()
+  {
+     mysfx.PlayOneShot(shotfx);
+    int rad=Random.Range(1,5);
+    switch(rad)
+    {
+      case 1 : mysfx.PlayOneShot(a);
+      break;
+      case 2 : mysfx.PlayOneShot(b);
+      break;
+      case 3: mysfx.PlayOneShot(c);
+      break;
+      case 4 : mysfx.PlayOneShot(d);
+      break;
+    }
   }
 }

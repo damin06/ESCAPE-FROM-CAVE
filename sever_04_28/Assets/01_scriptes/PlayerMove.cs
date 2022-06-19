@@ -30,7 +30,9 @@ public class PlayerMove : chrachtermove
 
     private Collider2D _col = null;
     followenemy enemyfollow;
-  
+      [SerializeField]private AudioSource mysfx;
+  [SerializeField]private AudioClip jumpsound;
+  [SerializeField]private AudioClip fall;
 
     protected override void Start()
     {
@@ -88,14 +90,17 @@ private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space) && IsGround())
         {
+            mysfx.PlayOneShot(jumpsound);
             _rb.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
         }
           if(Input.GetKeyDown(KeyCode.UpArrow) && IsGround())
         {
+             mysfx.PlayOneShot(jumpsound);
             _rb.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
         }
           if(Input.GetKeyDown(KeyCode.W) && IsGround())
         {
+             mysfx.PlayOneShot(jumpsound);
             _rb.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
         }
         yield return null;
@@ -103,6 +108,7 @@ private void Update()
 
     private bool IsGround()
     {
+        //mysfx.PlayOneShot(fall);
         return Physics2D.OverlapBox(transform.position, _col.bounds.size, 0f , _groundLayer);
     }
 private void OnTriggerEnter2D(Collider2D collision)

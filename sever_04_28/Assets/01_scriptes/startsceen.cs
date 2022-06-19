@@ -16,7 +16,16 @@ public class startsceen : MonoBehaviour
     {
         
     }
-   public void bnstart(){
+   public void bnstart()
+   {
         SceneManager.LoadScene("Play");
     }
+     public void quit()
+ {
+   #if UNITY_EDITOR
+   UnityEditor.EditorApplication.isPlaying=false;
+   #else
+   Application.Quit();
+   #endif
+ }
 }
