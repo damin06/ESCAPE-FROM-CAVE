@@ -22,7 +22,7 @@ public class playerBullet : MonoBehaviour
         {
           //doleft();
           //transform.DOMove(Vector3.right,25);
-      transform.position+=vec*10*Time.deltaTime;
+      transform.position+=vec*15*Time.deltaTime;
       //transform.position+=uv*7*Time.deltaTime;
         }
         else
@@ -30,7 +30,7 @@ public class playerBullet : MonoBehaviour
           //doright();
           //transform.eulerAngles= new Vector3(0,180,0);
            //transform.position+=uv*7*Time.deltaTime;
-transform.position+=vec*-1*10*Time.deltaTime;
+transform.position+=vec*-1*15*Time.deltaTime;
         }
     }
     private void doleft()

@@ -8,7 +8,7 @@ public class timer : MonoBehaviour
 {
     [SerializeField]private Text current_text;
     private float set_time=60;
-    private float m=2;
+    public float m=2;
       [SerializeField]private Image a;
    
     private float time;
@@ -27,17 +27,25 @@ public class timer : MonoBehaviour
             lostgame();
         }
         set_time-=Time.deltaTime;
-        current_text.text=m+":"+Mathf.Round(set_time).ToString();
+        if(set_time<9)
+        {
+            current_text.text=m+":"+"0"+Mathf.Round(set_time).ToString();
+        }
+        else
+        {
+           current_text.text=m+":"+Mathf.Round(set_time).ToString();
+        }
+        
         if(set_time<0)
         {
         m-=1;
         set_time=60;
         }
 
-        if(m==0)
+        if(m<0)
         {
            StartCoroutine(fade());
-           StartCoroutine(wingame());
+        StartCoroutine(wingame());
         }
     }
     IEnumerator wingame()

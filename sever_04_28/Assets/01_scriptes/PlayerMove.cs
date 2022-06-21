@@ -90,22 +90,28 @@ private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space) && IsGround())
         {
-            mysfx.PlayOneShot(jumpsound);
+            jumpcsoundco();
             _rb.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
         }
           if(Input.GetKeyDown(KeyCode.UpArrow) && IsGround())
         {
-             mysfx.PlayOneShot(jumpsound);
+         jumpcsoundco();
             _rb.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
         }
           if(Input.GetKeyDown(KeyCode.W) && IsGround())
         {
-             mysfx.PlayOneShot(jumpsound);
+
+          jumpcsoundco();
             _rb.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
         }
         yield return null;
+    
     }
+public void jumpcsoundco()
+{
+     mysfx.PlayOneShot(jumpsound);
 
+}
     private bool IsGround()
     {
         //mysfx.PlayOneShot(fall);
@@ -147,3 +153,4 @@ IEnumerator HitColorAnimation()
         
     }
 }
+

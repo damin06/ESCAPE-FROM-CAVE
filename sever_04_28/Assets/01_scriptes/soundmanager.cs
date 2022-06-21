@@ -7,10 +7,14 @@ public class soundmanager : MonoBehaviour
    [SerializeField]private AudioSource music;
    [SerializeField]private AudioSource enemys;
    [SerializeField]private AudioSource player;
-   public void setsound(float Volume)
+  
+   public void setsound(float Volume1)
    {
-    music.volume=Volume;
-    enemys.volume=Volume;
-    player.volume=Volume;
+  
+    music.volume=Volume1;
+    enemys.volume=Volume1;
+    player.volume=Volume1;
+  
    }
+
 }

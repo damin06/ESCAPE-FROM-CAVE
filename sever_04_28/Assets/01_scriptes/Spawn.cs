@@ -12,10 +12,20 @@ public class Spawn : MonoBehaviour
     private float spawntime;
     [SerializeField]private float Spawnmintime;
     [SerializeField]private float spawnmaxtime;
+    timer tm;
     void Start()
     {
+        tm=GetComponent<timer>();
         StartCoroutine(SpawnEnemy());
         //StartCoroutine(SpawnEnemy2());
+    }
+    void update()
+    {
+     if(tm.m<1)
+     {
+        Spawnmintime-=2;
+        spawnmaxtime-=-2;
+     }
     }
 // private IEnumerator SpawnEnmy()
 //     {      
