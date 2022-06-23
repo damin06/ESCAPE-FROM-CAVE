@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class followenemy : MonoBehaviour
 {
-  
+  private bool isspawn=false;
     PlayerHP playerHP;
     Animator animator;
 
@@ -52,6 +52,10 @@ private void spawnenemy(){
             Destroy(gameObject);
         }
         curtime+=Time.deltaTime;
+        if(curtime>1)
+        {
+       isspawn=true;
+        }
         
         float distoplayer = Vector2.Distance(transform.position,playerpos.transform.position);
         if(distoplayer<agroRange && curtime>1)
@@ -108,6 +112,8 @@ private void spawnenemy(){
     }
    private void OnCollisionEnter2D(Collision2D collision)
     {
+      if(isspawn)
+      {
         if(collision.gameObject.CompareTag("bullet")){
           mysfx.PlayOneShot(deathsound);
         }
@@ -116,7 +122,7 @@ private void spawnenemy(){
         mysfx.PlayOneShot(attack);
         PlayerHP.currentHP-=damage;
         //collision.GetComponent<PlayerHP>().HPdamager(damage);
-      
+      }
       }
     }
    public void enemydestroy()

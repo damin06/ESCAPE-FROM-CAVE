@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class chrachtermove : MonoBehaviour
 {
-      //[RequireComponent(typeof(Rigidbody2D))]
+
 protected Rigidbody2D _rb=null;
 
  [SerializeField]
@@ -18,7 +18,6 @@ protected virtual void Start(){
         if(_rb.velocity.x >= 0.1f)
         {
             isFacingRight = true;
-            //방향을 오른쪽으로 보는 코드
         }
         else
         {
