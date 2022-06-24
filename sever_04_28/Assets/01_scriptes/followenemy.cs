@@ -22,7 +22,7 @@ public class followenemy : MonoBehaviour
     [SerializeField]
     private float damage=5;
     [SerializeField]
-    private float enemyHP=10;
+    private float enemyHP;
        [SerializeField]private AudioSource mysfx;
      [SerializeField]private AudioClip deathsound;
   [SerializeField]private AudioClip attack;
@@ -30,6 +30,7 @@ public class followenemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemyHP=Random.Range(10,30);
        playerHP=GetComponent<PlayerHP>();
         playerpos = GameObject.FindGameObjectWithTag("Player");
         animator = GetComponent<Animator>();
@@ -104,6 +105,7 @@ private void spawnenemy(){
     {
       if(other.CompareTag("bullet"))
       {
+      
          enemyHP-=playerBullet.bulletdamage;
            score sc = GameObject.Find("score").GetComponent<score>();
            sc.SetScore(sc.GetScore()+10);
