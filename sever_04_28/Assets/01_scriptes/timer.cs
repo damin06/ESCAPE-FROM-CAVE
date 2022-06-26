@@ -27,7 +27,7 @@ public class timer : MonoBehaviour
             lostgame();
         }
         set_time-=Time.deltaTime;
-        if(set_time<9)
+        if(set_time<=9)
         {
             current_text.text=m+":"+"0"+Mathf.Round(set_time).ToString();
         }

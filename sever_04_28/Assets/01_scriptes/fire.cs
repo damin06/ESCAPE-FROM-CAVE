@@ -9,8 +9,8 @@ public class fire : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed=Random.Range(3.5f,5.5f);
-        Invoke("Destroyobject",8);
+        speed=Random.Range(3.5f,5);
+        Invoke("Destroyobject",7);
         target= GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 

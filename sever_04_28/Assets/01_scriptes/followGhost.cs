@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class followGhost : MonoBehaviour
 {
-        private float ghostHp=100;
+        private float ghostHp=200;
    private  Transform target;
    private float speed=3;
    private float spawntime;   

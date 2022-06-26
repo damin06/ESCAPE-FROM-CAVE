@@ -60,12 +60,13 @@
      <Compile Include="Assets\01_scriptes\soundmanager.cs" />
      <Compile Include="Assets\01_scriptes\playerBullet.cs" />
      <Compile Include="Assets\01_scriptes\score.cs" />
+     <Compile Include="Assets\01_scriptes\followGhost.cs" />
+     <Compile Include="Assets\01_scriptes\fire.cs" />
      <Compile Include="Assets\01_scriptes\movingplatform.cs" />
      <Compile Include="Assets\01_scriptes\PlayerMove.cs" />
      <Compile Include="Assets\01_scriptes\playerhit.cs" />
      <Compile Include="Assets\01_scriptes\Diesceen.cs" />
-     <Compile Include="Assets\01_scriptes\followGhost.cs" />
-     <Compile Include="Assets\01_scriptes\fire.cs" />
+     <Compile Include="Assets\01_scriptes\spawnboss.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
