@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class followenemy : MonoBehaviour
 {
+       SpriteRenderer spriteRenderer;
   private bool isspawn=false;
     PlayerHP playerHP;
     Animator animator;
@@ -30,7 +31,8 @@ public class followenemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemyHP=Random.Range(10,30);
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        enemyHP=Random.Range(10,20);
        playerHP=GetComponent<PlayerHP>();
         playerpos = GameObject.FindGameObjectWithTag("Player");
         animator = GetComponent<Animator>();
@@ -118,9 +120,13 @@ private void spawnenemy(){
       {
         if(collision.gameObject.CompareTag("bullet")){
           mysfx.PlayOneShot(deathsound);
+                  StopCoroutine("HitColorAnimation");
+        StartCoroutine("HitColorAnimation");  
         }
       if(collision.gameObject.CompareTag("Player"))
       {
+                StopCoroutine("HitColorAnimation");
+        StartCoroutine("HitColorAnimation");  
         mysfx.PlayOneShot(attack);
         PlayerHP.currentHP-=damage;
         //collision.GetComponent<PlayerHP>().HPdamager(damage);
@@ -130,5 +136,13 @@ private void spawnenemy(){
    public void enemydestroy()
     {
      Destroy(gameObject);
+    }
+    IEnumerator HitColorAnimation()
+    {
+        spriteRenderer.color = Color.red;
+
+        yield return new WaitForSeconds(0.2f);
+
+        spriteRenderer.color = Color.white;
     }
 }

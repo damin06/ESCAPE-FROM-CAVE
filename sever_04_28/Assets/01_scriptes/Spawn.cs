@@ -15,6 +15,7 @@ public class Spawn : MonoBehaviour
     timer tm;
     void Start()
     {
+          Instantiate(enemy, new Vector2(Random.Range(minPos.position.x, maxPos.position.x), maxPos.position.y), enemy.transform.rotation);
         tm=GetComponent<timer>();
         StartCoroutine(SpawnEnemy());
         //StartCoroutine(SpawnEnemy2());
@@ -23,8 +24,8 @@ public class Spawn : MonoBehaviour
     {
      if(tm.m<1)
      {
-        Spawnmintime-=2;
-        spawnmaxtime-=-2;
+        Spawnmintime-=1;
+        spawnmaxtime-=-1;
      }
     }
 // private IEnumerator SpawnEnmy()

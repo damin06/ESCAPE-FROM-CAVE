@@ -27,7 +27,7 @@ public class PlayerHP : MonoBehaviour
     {
       if(Input.GetKeyDown(KeyCode.J))
       {
-        currentHP-=10;
+        //currentHP-=10;
       }
         HPbar.fillAmount = currentHP / maxHP ;
         if(currentHP <=0)

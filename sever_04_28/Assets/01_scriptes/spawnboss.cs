@@ -16,7 +16,7 @@ public class spawnboss : MonoBehaviour
     void Update()
     {
         timespawn+=Time.deltaTime;
-        if(timespawn>120)
+        if(timespawn>150)
         {
             timespawn=0;
 Instantiate(boss);
